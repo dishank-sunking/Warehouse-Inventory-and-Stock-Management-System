@@ -10,14 +10,19 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: update       # Hibernate auto-creates/updates tables from entities
-    show-sql: true           # It will help me Print SQL queries in console
+      ddl-auto: update
+    show-sql: true
     properties:
       hibernate:
         format_sql: true
+      defer-datasource-initialization: true
     open-in-view: false
+
+  sql:
+    init:
+      mode: always
 
 server:
   port: 8080
   servlet:
-    context-path: /api/v1   # All URLs start with /api/v1
+    context-path: /api/v1
