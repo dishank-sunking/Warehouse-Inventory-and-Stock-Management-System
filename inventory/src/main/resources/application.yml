@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: warehouse-inventory
+
+  datasource:
+    url: jdbc:mysql://localhost:3307/warehouse_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: warehouse_user
+    password: warehouse_pass
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update       # Hibernate auto-creates/updates tables from entities
+    show-sql: true           # It will help me Print SQL queries in console
+    properties:
+      hibernate:
+        format_sql: true
+    open-in-view: false
+
+server:
+  port: 8080
+  servlet:
+    context-path: /api/v1   # All URLs start with /api/v1
